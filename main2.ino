@@ -55,6 +55,7 @@ void loop()
             ind4 = msg.indexOf(';', ind3+1 );
             duration = msg.substring(ind3+1); //captures remain part of data after last ,
              Serial.print("ssid = ");
+             ssid.replace("%20"," "); // Replace %20 with space
              Serial.println(ssid); 
              Serial.print("password = ");
              Serial.println(psword);

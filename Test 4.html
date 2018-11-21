@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+	TextVar=form.inputbox.value;
+	TextVar1=form.inputbox1.value;
+	TextVar2=form.inputbox2.value;
+	TextVar3=form.inputbox3.value;
+	ArduinoVar= "http://192.168.4.1/"+TextVar+";"+TextVar1+";"+TextVar2+";"+TextVar3;
+        $.get(ArduinoVar, function(data, status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    });
+});
+</script>
+</head>
+<body>
+<h2> <i> Setting Up the sensor</i> </h2>
+<div style="margin: 0; width:400px; height:30px;">
+<FORM NAME="form" ACTION="" METHOD="GET">
+<label> SSID: <INPUT TYPE="text" NAME="inputbox" VALUE="" /></label><br /><br />
+<label> Password: <INPUT TYPE="text" NAME="inputbox1" VALUE="" /></label><br /><br />
+<label> API: <INPUT TYPE="text" NAME="inputbox2" VALUE="" /></label><br /><br />
+<label> Interval(mins): <INPUT TYPE="text" NAME="inputbox3" VALUE="" /></label><br /><br />
+</FORM>
+<button>Submit</button>
+</div>
+
+</body>
+</html>
